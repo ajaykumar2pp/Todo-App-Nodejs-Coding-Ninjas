@@ -129,15 +129,18 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
-  <script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
     const submitButton = document.getElementById("submit-button");
     const contactForm = document.getElementById("contact-form");
 
-    submitButton.addEventListener("click", function () {  
-      event.stopPropagation();
-      contactForm.submit();  
+    submitButton.addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent the default form submission
+      contactForm.submit();
     });
-  </script>
+  });
+</script>
+
 </body>
 
 </html>
